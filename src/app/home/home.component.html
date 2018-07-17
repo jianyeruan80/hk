@@ -1,0 +1,391 @@
+<main style="display:flex;flex-flow: column wrap;height:100%">
+<div>	
+<div style="BACKGROUND-COLOR: #fff; WIDTH: 100%; HEIGHT: 100px;">
+            <div style="TEXT-ALIGN: center; MARGIN: 0px auto; WIDTH: 1000px">
+                <div style="MARGIN: 0px; WIDTH: 994px; HEIGHT: 100px">
+                    <div style="TEXT-ALIGN: left; MARGIN-TOP: 5px; WIDTH: 410px; FLOAT: left">
+                        <a href="http://www.hkxc.hk">
+                            <img border="0" alt="香港现成公司，现成公司买卖" src="./assets/images/logo2014n.png">
+                        </a>
+                    </div>
+                    <div style="TEXT-ALIGN: left; PADDING-BOTTOM: 8px; PADDING-LEFT: 40px; WIDTH: 440px; PADDING-RIGHT: 0px; FLOAT: right; PADDING-TOP: 10px">
+                        
+						
+						
+						<div style="MARGIN-TOP: 8px">
+						     <font size="3"><b>公司邮箱：info@hkxc.hk   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QQ:613600502</b></font><br>
+                            
+                                <input onblur="if(this.value=='')this.value='輸入您想查找行業的公司';this.style.color='#A9A9A9'" style="BORDER-BOTTOM: #ff9000 2px solid; BORDER-LEFT: #ff9000 2px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 34px; PADDING-LEFT: 4px; WIDTH: 308px; PADDING-RIGHT: 4px; DISPLAY: inline-block; HEIGHT: 34px; COLOR: #a9a9a9; FONT-SIZE: 14px; VERTICAL-ALIGN: middle; BORDER-TOP: #ff9000 2px solid; BORDER-RIGHT: #ff9000 2px solid; PADDING-TOP: 0px" id="skey" onfocus="this.style.color='#A9A9A9'" onclick="if(this.value=='輸入您想查找行業的公司')this.value='';this.style.color='#000';" value="輸入您想查找行業的公司" name="key" 
+                                [(ngModel)]="search['allName']"  >
+								
+                                <input style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; MARGIN-TOP: 1px; WIDTH: 85px; DISPLAY: inline-block; BACKGROUND: url(./assets/images/Search2014.gif) #ff9000 no-repeat center 50%; HEIGHT: 38px; VERTICAL-ALIGN: middle; BORDER-TOP: medium none; CURSOR: pointer; BORDER-RIGHT: medium none" type="submit" name="btnSearch" value="">
+                            
+                        </div>
+                        <div class="clear">
+                        </div>
+						
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+<div class="Menu_bg">
+            <div style="TEXT-ALIGN: center; MARGIN: 0px auto; WIDTH: 994px">
+                <div style="MARGIN: 0px;display:flex">
+                    <div [ngClass]="{'menudiv1':true,'menudiv1d':selectIndex==n['key']}" *ngFor='let n of  navs' (click)="link(n)">
+                        <a class="menu" href="JavaScript:">
+                            {{n.name}}
+                        </a>
+                    </div>
+                   
+                   
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+<div class="banner">
+            <div class="indexPicad3">
+                
+                    <img border="0" src="./assets/images/banner.gif">
+                
+            </div>
+        </div>
+
+<!-- <div class="c path mb10">
+			  <a href="/">首页</a> <a href="/mana.htm">管理中心</a>  公司列表
+		   </div> -->
+</div>
+
+<div class="c path" style="margin-top:10px;display:flex;" *ngIf="selectIndex>1">
+              <a href="/mana.htm">{{nav["name"]}}</a><div style="flex:1"></div><a href="javascript:" (click)="downLoadExcel()" target="_blank">[导出Excel]</a>
+           </div>
+ <div class="main" style="flex:1 1 50px;overflow-y:auto;" *ngIf="currentURl=='/login'">
+	<div style="width:1000px;margin:auto">
+        <form method="post" style="margin:auto;" (ngSubmit)="login()" autocomplete="off" ngNativeValidate>
+                    <table class="itxtable">
+                        <thead><tr><th>管理中心登录</th></tr></thead>
+                        <tbody>
+                         
+                        </tbody>
+                    </table>
+                    <div style="border:solid #ccc 1px;text-align:center;line-height:3;font-size:18px">
+                        <div>
+                            登 录 名&nbsp;&nbsp;&nbsp;<input type="text" required="" name="Name" [(ngModel)]="user.account">
+                        </div>
+                        <div>
+                            登录密码&nbsp;<input type="password" name="password" required="" class="input" [(ngModel)]="user.password">
+                        </div>
+                        <div>
+                            <Button type="submit" value=" 登 录 " style="padding:6px 15px">登 录</Button>
+                        </div>
+                    </div>
+            
+</form>
+                </div>
+</div>	
+
+ <div class="main" style="flex:1 1 50px;overflow-y:auto;" *ngIf="currentURl=='/manager'">
+   <div class="main">
+        
+          
+        
+           <div class="wap994">
+                <div class="left">
+                    <div class="proFl">
+                        <div class="title">
+                            <span>
+                                管理中心 
+                            </span>
+                            
+                        </div>
+                        <div class="proFlCon h600" >
+                            <ul>
+                                <li style="HEIGHT: 28px; PADDING-TOP: 15px" class="proFl01" >
+                                    <h3 style="display:flex" (click)="clickItem($event)">
+                                        <a style="flex:1" href="JavaScript:">公司管理</a>
+                                        <a href="JavaScript:">添加</a>
+                                    </h3>
+                                </li>
+                               <!--  <li style="HEIGHT: 28px; PADDING-TOP: 15px" class="proFl02">
+                                    <h3><a href="JavaScript:">公司列表</a></h3>
+                                </li>
+                                
+                                <li style="HEIGHT: 28px; PADDING-TOP: 15px" class="proFl02">
+                                    <h3><a href="JavaScript:">推荐列表</a></h3>
+                                </li> -->
+                                
+                                <li style="HEIGHT: 28px; PADDING-TOP: 15px" class="proFl02" >
+                                    <h3 style="display:flex" (click)="clickItem($event)"><a style="flex:1" href="JavaScript:">公告管理</a> 
+                                        <a href="JavaScript:">添加</a></h3>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+<div class="right" *ngIf="rightSign=='公告管理添加' ">
+<table class="itxtable">
+                        <thead><tr><th>编辑公告</th></tr></thead>
+                        <tbody>
+                         
+                        </tbody>
+                    </table>
+
+                    <table class="itxtable">
+                        <tbody>
+                            <form method="post" (ngSubmit)="saveAd()" ngNativeValidate>
+                                <input type="hidden" name="Id" value="">
+                                <input type="hidden" name="Action" value="OK">
+                                <tr><td class="lefttd tc en w120"><span style="color:red">*</span>标题：</td><td><input required=""  type="text" name="Title" [(ngModel)]="ad.title" value="" size="40"></td></tr>
+                                <tr><td class="lefttd tc en w120"><span style="color:red">*</span>内容：</td><td><textarea required name="Detail" rows="10" [(ngModel)]="ad.content" cols="80"></textarea></td></tr>
+                                <tr><td class="lefttd tc en w120">&nbsp;</td><td>
+                                    <Button type="submit" value="提交保存 " style="padding:6px 15px">提交保存</Button>
+                                    </td></tr>
+                            </form>
+                        </tbody>
+                    </table>
+</div>
+<div class="right" *ngIf="rightSign=='公告管理'">
+ 
+        <table class="itxtable">
+                        <thead><tr><th>公告管理</th></tr></thead>
+                        <tbody>
+                         
+                        </tbody>
+                    </table>
+                    <table class="itxtable">
+                        <thead><tr><th>Id</th><th>标题</th><th>日期</th><th>操作</th></tr></thead>
+                        <tbody>
+
+
+    <tr *ngFor='let n of ads;let i = index'>
+    <td class="lefttd tc en">{{ads.length-i}}</td>
+    <td class="tc en"><a href="msg-2.htm" target="_blank">{{n.title}}</a></td>
+    <td class="en tc">{{n.createdAt}}</td>
+    
+    
+    <td class="en tc" (click)="clickAd($event,n)">
+           <span *ngIf="!n.active">[<font color="red">已关闭</font>]</span>
+          <span *ngIf="n.active">[<font color="blue">已开启</font>]</span>
+        <br>[<a href="JavaScript:">删除</a>]&nbsp;&nbsp;[<a href="JavaScript:">修改</a>]
+
+
+    
+    
+    </td>
+    
+    
+    </tr>
+
+ 
+
+
+
+   
+
+ 
+
+
+
+                    </table>
+                    
+</div>
+<div class="right" *ngIf=" rightSign=='公司管理添加'" >
+        <form method="post" (ngSubmit)="save()" ngNativeValidate>
+<table class="itxtable">
+                        <thead><tr><th>添加现成公司</th></tr></thead>
+                        <tbody>
+                         
+                        </tbody>
+                    </table>
+
+                    <table class="itxtable">
+                        <tbody>
+                            <form method="post" action="add_save.htm"></form>
+                                <input type="hidden" name="Id" value="">
+                                <input type="hidden" name="Action" value="OK">
+                                <tr><td class="lefttd tc en w120">
+                                    <span style="color:red">*</span>注册编号：</td><td>
+                                        <input required="" type="text" name="No" [(ngModel)]="company.code" value=""></td></tr>
+                                <tr><td class="lefttd tc en w120"><span style="color:red">*</span>成立日期：</td><td>
+                                    <input required type="text" [(ngModel)]="company.regDate" name="RegDate"  
+                                    (keyup)='checkedDate({"key":"regDate","value":company.regDate})' value=""></td></tr>
+                                <tr><td class="lefttd tc en w120"><span style="color:red">*</span>英文名称：</td><td>
+                                    <input required type="text" [(ngModel)]="company.name" name="EName" value="" size="40"></td></tr>
+                                <tr><td class="lefttd tc en w120">中文名称：</td><td>
+                                    <input type="text" name="Name" value=""  [(ngModel)]="company.slName" size="40"></td></tr>
+                                
+                                <tr><td class="lefttd tc en w120">出售价格：</td><td><input [(ngModel)]="company.price" type="text" name="Price" value=""> 元</td></tr>
+                                <tr><td class="lefttd tc en w120">预定日期：</td><td><input (keyup)='checkedDate({"key":"orderDate","value":company.orderDate})'   [(ngModel)]="company.orderDate" type="text" name="OrderDate" value=""> </td></tr>
+                                <tr><td class="lefttd tc en w120">预定说明：</td><td><textarea [(ngModel)]="company.orderDesc" name="OrderSm" rows="4" cols="40"></textarea></td></tr>
+                                <tr><td class="lefttd tc en w120">详细介绍：</td><td><textarea [(ngModel)]="company.desc" name="Detail" rows="8" cols="80"></textarea></td></tr>
+                                <tr><td class="lefttd tc en w120">&nbsp;</td><td>
+<Button type="submit" value="提交保存" style="padding:6px 15px">提交保存</Button>
+</td></tr>
+                            
+                        </tbody>
+                    </table></form>
+   
+</div>
+
+<div class="right" *ngIf="rightSign=='公司管理'">
+
+                    <table class="itxtable">
+                        <thead><tr><th>#</th><th>注册编号</th><th>成立日期</th><th>公司名称</th><th>预定日期</th><th>操作</th></tr></thead>
+                        <tbody>
+
+
+    <tr *ngFor='let n of companys  |filterBy:search;let i = index'>
+    <td class="lefttd tc en">{{i+1}}</td>
+    <td class="tc en">{{n.code}}</td>
+    <td class="en tc">{{n.regDate}}</td>
+    <td><span class="en">{{n.name}}</span><br>{{n.slName}}</td>
+    <td class="en tc">{{n.orderDate}}</td> 
+    
+    
+    <td class="en tc"  (click)="clickCompany($event,n)">
+    
+    
+     <span *ngIf="!n.recommend">[<font color="red">未推荐</font>]</span>
+          <span *ngIf="n.recommend">[<font color="blue">已推荐</font>]</span>
+        <br>[<a href="JavaScript:">删除</a>]&nbsp;&nbsp;[<a href="JavaScript:">修改</a>]
+
+
+
+
+    
+    
+    </td>
+    
+    
+    </tr>
+
+ 
+
+ 
+
+                        </tbody>
+                        
+
+                    </table>
+                    
+
+
+                </div>
+            </div>
+        </div>
+</div>  
+<div class="main" style="flex:1 1 50px;overflow-y:auto;" *ngIf="currentURl !='/login' && currentURl !='/manager'">
+		  
+        <div class="wap994">
+                <div class="left">
+                    <div class="proFl">
+                        <div class="title">
+                            <span>
+                                最新公告
+                            </span>
+							
+                        </div>
+                        <div class="proFlCon h200">
+						    <marquee onmouseover="this.stop()" onmouseout="this.start()" scrollamount="1" scrolldelay="30" direction="up" height="99%">
+								<ul  *ngFor='let n of  ads| filterBy:{"active":true}|slice:0:1'>
+								
+								
+									<li style="HEIGHT: 180px; PADDING-TOP: 8px" class="proFl01">
+										<h3 style="line-height:2">1、<a href="msg-1.htm">{{n.title}}</a></h3>
+										<p style="text-indent:25px">
+											{{n.content}}
+										</p>
+									</li>	
+								
+									
+								</ul>
+							</marquee>
+								
+                        </div>
+		
+						
+                        <div class="title">
+                            <span>
+                                最新预定公司
+                            </span>
+                        </div>
+                        <div class="proFlCon h1000 ">
+                            <ul>
+							
+							
+                                <li style="HEIGHT: 70px; PADDING-TOP: 8px" class="proFl01" *ngFor='let n of companys | filterBy:{"orderDate":!""};let i=index'>
+                                    <h3>{{i+1}}、{{n.slName}}</h3>
+                                    <p>
+                                       {{n.name}}
+									</p>
+                                </li>	
+						
+							
+								
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+
+<div class="right">
+
+					<table class="itxtable">
+						<thead><tr><th>#</th><th>注册编号<br>CI No.</th><th>成立日期<br>Date</th><th>公司名称<br>Company Name</th><th width="100">预定日期<br>Reserve Date</th>
+						</tr></thead>
+						<tbody>
+
+
+	<tr *ngFor='let n of companys |filterBy:search;let i = index'>
+	   <td class="lefttd tc en">{{i+1}}</td>
+	   <td class="tc en">{{n.code}}</td>
+	   <td class="en tc">{{n.regDate}}</td>
+	   <td><span class="en">{{n.name}}</span><br><font size="3">{{n.slName}}</font></td>
+	   <td class="en tc">
+	       <b>{{n.orderDate?"R":""}}</b>
+		
+		</td> 
+	   
+
+	</tr>
+</tbody>
+
+
+						<!-- <tr bgcolor="#efefef"><td colspan="8"><script language="JavaScript" type="text/JavaScript" src="js/showo_page.js"></script><table style="BORDER-COLLAPSE: collapse;" bordercolor="#111111" height="10" cellspacing="0" cellpadding="0" width="95%" border="0"><tbody><tr><td valign="bottom" style="font-family: Verdana,宋体; font-size: 11.5px; line-height: 15px">页次:<font color="red">1</font>/5&nbsp;&nbsp;每页<font color="red">18</font>&nbsp;&nbsp;共计:<font color="red">87</font></td><td valign="bottom" align="right" style="font-family: Verdana,宋体; font-size: 11.5px; line-height: 15px"><a href="/index-p1.htm"><font face="webdings">9</font></a>&nbsp;<a href="/index-p1.htm"><font face="webdings">7</font></a>&nbsp; 1 <a href="/index-p2.htm"><font color="orange">[2]</font></a>&nbsp;<a href="/index-p3.htm"><font color="orange">[3]</font></a>&nbsp;<a href="/index-p4.htm"><font color="orange">[4]</font></a>&nbsp;<a href="/index-p5.htm"><font color="orange">[5]</font></a>&nbsp;<a href="/index-p2.htm"><font face="webdings">8</font></a>&nbsp;<a href="/index-p5.htm"><font face="webdings">:</font></a></td></tr></tbody></table></td></tr> -->
+						
+						
+
+					</table>
+
+
+                </div>
+            </div>
+</div>
+
+<div id="footernew2">
+            <div id="ftinfo">
+                © 2009 - 2018
+                <a href="/">
+                    香港现成有限公司
+                </a>
+                版权所有 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253429958'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s6.cnzz.com/z_stat.php%3Fid%3D1253429958%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1253429958"><a href="http://www.cnzz.com/stat/website.php?web_id=1253429958" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif"></a></span><script src=" http://s6.cnzz.com/z_stat.php?id=1253429958&amp;show=pic" type="text/javascript"></script><script src="http://c.cnzz.com/core.php?web_id=1253429958&amp;show=pic&amp;t=z" charset="utf-8" type="text/javascript"></script>
+
+                <ng-container *ngFor='let n of  navs'>
+                <span class="spanfootjj">
+                    |
+                </span>
+                <a href="javascript:"  (click)="link(n)" >
+                    {{n.name}}
+                </a>
+                <span class="spanfootjj">
+                    |
+                </span>
+                </ng-container>
+            </div>
+        </div>
+</main>
